@@ -21,7 +21,6 @@ class Temporal < Formula
   def install
     ldflags = "-s -w -X github.com/temporalio/cli/headers.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/temporal"
-    mkdir "#{var}/temporal" # for storing temporal.db
   end
 
   service do
