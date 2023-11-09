@@ -28,6 +28,9 @@ class Temporal < Formula
       "server", 
       "start-dev",
       "--db-filename=#{var}/temporal/temporal.db",
+      "--dynamic-config-value frontend.workerVersioningDataAPIs=true",
+      "--dynamic-config-value frontend.workerVersioningWorkflowAPIs=true",
+      "--dynamic-config-value worker.buildIdScavengerEnabled=true"
      ]
     run [opt_bin/"temporal"] + args
     working_dir var
