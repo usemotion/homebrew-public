@@ -1,8 +1,8 @@
 class Temporal < Formula
   desc "Command-line interface for running and interacting with Temporal Server and UI"
   homepage "https://temporal.io/"
-  url "https://github.com/temporalio/cli/archive/refs/tags/v0.10.5.tar.gz"
-  sha256 "41ddfad62861eaa8414cda2807bad7a51ebb158c841bd3bfcc1db2fcd3774c17"
+  url "https://github.com/temporalio/cli/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "9cc4e80254e95a3b456e7d605b518c1a3e4d62b92a08a05efd6cf897ce4b2f3e"
   license "MIT"
   head "https://github.com/temporalio/cli.git", branch: "main"
 
@@ -30,7 +30,8 @@ class Temporal < Formula
       "--db-filename=#{var}/temporal/temporal.db",
       "--dynamic-config-value frontend.workerVersioningDataAPIs=true",
       "--dynamic-config-value frontend.workerVersioningWorkflowAPIs=true",
-      "--dynamic-config-value worker.buildIdScavengerEnabled=true"
+      "--dynamic-config-value worker.buildIdScavengerEnabled=true",
+      "--db-filename=$(brew --prefix)/var/temporal/temporal.db"
      ]
     run [opt_bin/"temporal"] + args
     working_dir var
